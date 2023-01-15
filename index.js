@@ -5,7 +5,7 @@ class Student{
     }
 
     describe() {
-      return `${this.name}'s identification number is ${this.idNumber}.`;  
+      return `${this.name}'s identification number is ${this.idNumber}.`;  //Where does this show? Describe function was never defined in video, so I assumed was built in...
     }
 }
 
@@ -24,7 +24,7 @@ class School {
     }
 
     describe(){
-        return `${this.students.length} students attend ${this.schoolName}.`;
+        return `${this.students.length} students attend ${this.schoolName}.`; //ditto
     }
 }
 
@@ -68,7 +68,7 @@ class Menu {
         `);
     }
 
-    showSchoolMenuOptions(studentInfo) { //this isn't showing up?
+    showSchoolMenuOptions(studentInfo) { //we never define studentInfo, how does it know what this is?
         return prompt(`
         0) Back
         1) Add Student
@@ -119,7 +119,7 @@ class Menu {
         if (index > -1 && index < this.schools.length) {
            this.schools.splice(index, 1); 
         }
-    } //this doesnt run?
+    } 
 
     addStudent() {
         let name = prompt("Enter name of new student: ");
@@ -137,7 +137,3 @@ class Menu {
 
 let menu = new Menu();
 menu.start();
-
-console.log(menu.schools[0].students[0].describe());
-console.log(menu.schools[0].describe()); 
-//had to add these to get program to run. Otherwise said "display is not defined", but original video did not have these..
