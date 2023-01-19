@@ -3,28 +3,12 @@ class Student{
         this.name = name;
         this.idNumber = idNumber;
     }
-
-    describe() {
-      return `${this.name}'s identification number is ${this.idNumber}.`;  //Where does this show? Describe function was never defined in video, so I assumed was built in...
-    }
-}
+} //removed describe entirely
 
 class School {
     constructor(schoolName) {
         this.schoolName = schoolName;
         this.students = [];
-    }
-
-    addStudent(student) {
-        if (student instanceof Student) {
-            this.students.push(student);
-        } else {
-            throw new Error(`You can only add an instance of student. Argument is not a student: ${student}`);
-        }
-    }
-
-    describe(){
-        return `${this.students.length} students attend ${this.schoolName}.`; //ditto
     }
 }
 
@@ -68,13 +52,13 @@ class Menu {
         `);
     }
 
-    showSchoolMenuOptions(studentInfo) { //we never define studentInfo, how does it know what this is?
+    showSchoolMenuOptions(schoolInfo) { //changed to "schoolInfo"- made more sense
         return prompt(`
         0) Back
         1) Add Student
         2) Remove Student
         ---------------------
-        ${studentInfo}
+        ${schoolInfo}
         `);
     }
 
